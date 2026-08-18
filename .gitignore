@@ -1,0 +1,7 @@
+# ここは mp4 を入れるためのリポジトリ。
+# 本体 (GhostMoviePlay) の .gitignore は *.mp4 / *.webm / *.wav を除外しているが、
+# それをここへ持ってくると置きたいものが置けなくなる。コピーしないこと。
+
+Thumbs.db
+desktop.ini
+.DS_Store
