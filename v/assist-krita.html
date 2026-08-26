@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krita —— 描けなくなったら、選択範囲を疑う | GhostMoviePlay Gallery</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%231d6ae5'/%3E%3Cpath%20d='M13%2010.5L22%2016l-9%205.5z'%20fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../style.css">
+<meta name="description" content="図形の片方を矩形選択して塗ったあと、解除を忘れたまま別の場所へ筆を走らせると、なぞっても線が一本も残らない。エラーも音も出ないのでブラシやレイヤーを疑ってしまうが、原因は離れたところに残った選択範囲で、その外側は描けないように保護されている。解除して同じブラシ・同じ場所に描けるところまで。">
+<meta property="og:title" content="Krita —— 描けなくなったら、選択範囲を疑う">
+<meta property="og:description" content="図形の片方を矩形選択して塗ったあと、解除を忘れたまま別の場所へ筆を走らせると、なぞっても線が一本も残らない。エラーも音も出ないのでブラシやレイヤーを疑ってしまうが、原因は離れたところに残った選択範囲で、その外側は描けないように保護されている。解除して同じブラシ・同じ場所に描けるところまで。">
+<meta property="og:url" content="https://lancard-aikawa.github.io/GhostMoviePlayGallery/v/assist-krita.html">
+<meta property="og:image" content="https://lancard-aikawa.github.io/GhostMoviePlayGallery/videos/assist-krita.jpg">
+<meta property="og:site_name" content="GhostMoviePlay Gallery">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="video.other">
+<meta property="og:video" content="https://lancard-aikawa.github.io/GhostMoviePlayGallery/videos/assist-krita.mp4">
+<meta property="og:video:secure_url" content="https://lancard-aikawa.github.io/GhostMoviePlayGallery/videos/assist-krita.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="video:duration" content="89">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="back"><a href="../">← GhostMoviePlay Gallery</a></p>
+  <h1>Krita —— 描けなくなったら、選択範囲を疑う</h1>
+  <p class="lede">図形の片方を矩形選択して塗ったあと、解除を忘れたまま別の場所へ筆を走らせると、なぞっても線が一本も残らない。エラーも音も出ないのでブラシやレイヤーを疑ってしまうが、原因は<strong>離れたところに残った選択範囲</strong>で、その外側は描けないように保護されている。解除して同じブラシ・同じ場所に描けるところまで。</p>
+</header>
+
+<main>
+  <article class="card">
+    <video controls playsinline preload="metadata" poster="../videos/assist-krita.jpg" src="../videos/assist-krita.mp4"></video>
+    <dl class="meta">
+      <dt>尺</dt><dd>約 89 秒</dd>
+      <dt>収録対象</dt><dd>Krita（<code>winget install KDE.Krita</code>。撮影用の白いキャンバスは仕込みが作り、後片付けで消える）</dd>
+      <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GhostMoviePlay/tree/main/docs/video/assist-krita">docs/video/assist-krita/</a></dd>
+      <dt>再現</dt><dd><strong>この 1 本もコマンド 1 つでは出ません。</strong> キャンバスは Krita が自分で描いていて UI Automation からは原理的に見えないので、<a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_WINAPP.md">支援収録</a>で人が操作して撮っています。筆を走らせるところは静止画では伝わらないため、10 ビートのうち 5 つは<strong>録画</strong>で撮りました。<code>uv run gmp shoot docs/video/assist-krita/plan.json</code> で画面を開き、ビートごとの指示どおりに操作して撮ったあと <code>gmp record</code> → <code>gmp render</code>。</dd>
+    </dl>
+  </article>
+</main>
+
+<footer>
+  <p>音声合成: VOICEVOX:ずんだもん —— 各動画にも同じクレジットを焼き込んでいます。</p>
+  <p><a href="../">ほかの動画を見る</a></p>
+</footer>
+
+</div>
+</body>
+</html>

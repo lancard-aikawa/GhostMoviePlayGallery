@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7-Zip —— パスワード付き zip は、ファイル名を隠さない | GhostMoviePlay Gallery</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%231d6ae5'/%3E%3Cpath%20d='M13%2010.5L22%2016l-9%205.5z'%20fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../style.css">
+<meta name="description" content="機密ファイル 4 つを、いちばん強い AES-256 のパスワード付き zip にする。ところが出来た書庫を開くとパスワードを訊かれず、中のファイル名が全部読める。zip はファイル名の一覧を暗号化しない仕様で、暗号の強さとは関係が無いと説明し、7z 形式の「ファイル名を暗号化」で隠せるところまで。">
+<meta property="og:title" content="7-Zip —— パスワード付き zip は、ファイル名を隠さない">
+<meta property="og:description" content="機密ファイル 4 つを、いちばん強い AES-256 のパスワード付き zip にする。ところが出来た書庫を開くとパスワードを訊かれず、中のファイル名が全部読める。zip はファイル名の一覧を暗号化しない仕様で、暗号の強さとは関係が無いと説明し、7z 形式の「ファイル名を暗号化」で隠せるところまで。">
+<meta property="og:url" content="https://lancard-aikawa.github.io/GhostMoviePlayGallery/v/assist-7zip.html">
+<meta property="og:image" content="https://lancard-aikawa.github.io/GhostMoviePlayGallery/videos/assist-7zip.jpg">
+<meta property="og:site_name" content="GhostMoviePlay Gallery">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="video.other">
+<meta property="og:video" content="https://lancard-aikawa.github.io/GhostMoviePlayGallery/videos/assist-7zip.mp4">
+<meta property="og:video:secure_url" content="https://lancard-aikawa.github.io/GhostMoviePlayGallery/videos/assist-7zip.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="video:duration" content="69">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="back"><a href="../">← GhostMoviePlay Gallery</a></p>
+  <h1>7-Zip —— パスワード付き zip は、ファイル名を隠さない</h1>
+  <p class="lede">機密ファイル 4 つを、いちばん強い AES-256 のパスワード付き zip にする。ところが出来た書庫を開くとパスワードを訊かれず、中のファイル名が全部読める。zip はファイル名の一覧を暗号化しない仕様で、<strong>暗号の強さとは関係が無い</strong>と説明し、7z 形式の「ファイル名を暗号化」で隠せるところまで。</p>
+</header>
+
+<main>
+  <article class="card">
+    <video controls playsinline preload="metadata" poster="../videos/assist-7zip.jpg" src="../videos/assist-7zip.mp4"></video>
+    <dl class="meta">
+      <dt>尺</dt><dd>約 69 秒</dd>
+      <dt>収録対象</dt><dd>7-Zip File Manager（<code>winget install 7zip.7zip</code>。撮影用のダミーは仕込みが作り、後片付けで消える）</dd>
+      <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GhostMoviePlay/tree/main/docs/video/assist-7zip">docs/video/assist-7zip/</a></dd>
+      <dt>再現</dt><dd><strong>この 1 本だけ、コマンド 1 つでは出ません。</strong> 7-Zip は UI Automation にウィンドウの枠しか出さず自動操作が原理的に届かないので、<a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_WINAPP.md">支援収録</a>で人が操作して撮っています。<code>uv run gmp shoot docs/video/assist-7zip/plan.json</code> で画面を開き、ビートごとの指示どおりに操作して撮ったあと <code>gmp record</code> → <code>gmp render</code>。台本と操作手順は素材に入っています。</dd>
+    </dl>
+  </article>
+</main>
+
+<footer>
+  <p>音声合成: VOICEVOX:ずんだもん —— 各動画にも同じクレジットを焼き込んでいます。</p>
+  <p><a href="../">ほかの動画を見る</a></p>
+</footer>
+
+</div>
+</body>
+</html>
