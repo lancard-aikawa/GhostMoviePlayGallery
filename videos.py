@@ -44,9 +44,6 @@ VIDEOS = [
                 "日本語には語境界が無く部分文字列で照合しているからだと説明して、"
                 "用語名を直して 1 箇所に収めるまで。",
         "poster_at": 48.0,
-        # **アプリの上端に既定フォルダのフルパスが出る。** そのままサムネにすると
-        # ユーザー名がプレビュー画像に載るので、上を落として使う
-        "poster_crop": "crop=iw:ih-140:0:140",
         "target": '<a href="https://github.com/lancard-aikawa/GlossPop">GlossPop</a>'
                   "（収録用の使い捨てデータルートを <code>serve.py</code> が立てるので、実辞書は触らない）",
         "source": '<a href="https://github.com/lancard-aikawa/GlossPop/tree/main/docs/video/gloss-scope">'
