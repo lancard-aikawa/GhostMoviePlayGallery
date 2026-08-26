@@ -172,9 +172,13 @@ def bundle_readme(item: dict, spec: dict, commit: str, names: list[str]) -> str:
 [GhostMoviePlay]({data.GMP}) を入れてから:
 
 ```
+uv run gmp doctor            # 足りない前提を言う
 uv run gmp ui --run          # 画面から。撮る面で段を上から押す
 uv run gmp build plan.json --voice
 ```
+
+**手引きは [README_BUNDLE.md]({data.GMP}/blob/main/README_BUNDLE.md)。**
+落としてから撮るまでを Claude Code にやらせる頼み方も、そこに貼れる形で置いてあります。
 
 ## 走らせる前に読む
 
@@ -240,7 +244,8 @@ def meta_rows(item: dict, seconds: float, bundle: dict | None, prefix: str) -> s
             "構成・台本・仕込みの一式。生成物は入っていません。"
             f'{item.get("bundle_note", "")}<br>'
             "<strong>開いたらまず <code>app.setup</code> / <code>app.start</code> を"
-            "読んでください</strong>（あなたの機械で走るコマンドです）")))
+            "読んでください</strong>（あなたの機械で走るコマンドです）。"
+            f'手引き → <a href="{data.GMP}/blob/main/README_BUNDLE.md">README_BUNDLE.md</a>')))
     rows.append(("再現", item["repro"]))
     return "\n".join(f"      <dt>{name}</dt><dd>{value}</dd>" for name, value in rows)
 
