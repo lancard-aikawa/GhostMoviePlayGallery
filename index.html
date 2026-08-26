@@ -105,8 +105,10 @@
     —— <a href="https://github.com/lancard-aikawa/GhostMoviePlay">GhostMoviePlay</a> で実際に出力した動画を並べています。
   </p>
   <p class="lede muted">
-    録画と書き出しは決定論的なので、どれも素材を clone して同じコマンドを打てば同じものが出ます。
+    録画と書き出しは決定論的なので、素材を clone して同じコマンドを打てば同じものが出ます。
     各動画に、それを再現するコマンドと素材の場所を添えてあります。
+    <strong>1 本だけ例外があります</strong> —— 自動操作が届かないアプリは人が操作して撮るので、
+    clone しても撮り直しが要ります（そのカードに書いてあります）。
   </p>
   <p class="toplinks">
     <a href="https://github.com/lancard-aikawa/GhostMoviePlay">本体リポジトリ</a>
@@ -137,6 +139,18 @@
       <dt>収録対象</dt><dd><a href="https://github.com/lancard-aikawa/GlossPop">GlossPop</a>（収録用の使い捨てデータルートを <code>serve.py</code> が立てるので、実辞書は触らない）</dd>
       <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GlossPop/tree/main/docs/video/gloss-scope">GlossPop/docs/video/gloss-scope/</a></dd>
       <dt>再現</dt><dd><code>uv run gmp build ../GlossPop/docs/video/gloss-scope/plan.json --voice</code>（GhostMoviePlay 側で実行）</dd>
+    </dl>
+  </article>
+
+  <article class="card">
+    <h2>7-Zip —— パスワード付き zip は、ファイル名を隠さない</h2>
+    <p>機密ファイル 4 つを、いちばん強い AES-256 のパスワード付き zip にする。ところが出来た書庫を開くとパスワードを訊かれず、中のファイル名が全部読める。zip はファイル名の一覧を暗号化しない仕様で、<strong>暗号の強さとは関係が無い</strong>と説明し、7z 形式の「ファイル名を暗号化」で隠せるところまで。</p>
+    <video controls playsinline preload="metadata" src="videos/assist-7zip.mp4"></video>
+    <dl class="meta">
+      <dt>尺</dt><dd>約 69 秒</dd>
+      <dt>収録対象</dt><dd>7-Zip File Manager（<code>winget install 7zip.7zip</code>。撮影用のダミーは仕込みが作り、後片付けで消える）</dd>
+      <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GhostMoviePlay/tree/main/docs/video/assist-7zip">docs/video/assist-7zip/</a></dd>
+      <dt>再現</dt><dd><strong>この 1 本だけ、コマンド 1 つでは出ません。</strong> 7-Zip は UI Automation にウィンドウの枠しか出さず自動操作が原理的に届かないので、<a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_WINAPP.md">支援収録</a>で人が操作して撮っています。<code>uv run gmp shoot docs/video/assist-7zip/plan.json</code> で画面を開き、ビートごとの指示どおりに操作して撮ったあと <code>gmp record</code> → <code>gmp render</code>。台本と操作手順は素材に入っています。</dd>
     </dl>
   </article>
 
