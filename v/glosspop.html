@@ -36,6 +36,7 @@
       <dt>尺</dt><dd>約 97 秒</dd>
       <dt>収録対象</dt><dd><a href="https://github.com/lancard-aikawa/GlossPop">GlossPop</a>（収録用の使い捨てデータルートを <code>serve.py</code> が立てるので、実辞書は触らない）</dd>
       <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GlossPop/tree/main/docs/video/gloss-scope">GlossPop/docs/video/gloss-scope/</a></dd>
+      <dt>設定</dt><dd><a href="../bundles/glosspop.zip" download>glosspop.zip</a>（6 KB / 3 ファイル / 出所 <code>12d1f33</code>）<br>構成・台本・仕込みの一式。生成物は入っていません。このフォルダは <strong>GlossPop の <code>docs/video/gloss-scope/</code> に戻して</strong>使います —— <code>app.cwd</code> が GlossPop のルートを指していて、<code>serve.py</code> が向こうの <code>content/</code> を読みます。<strong>撮る対象そのものは入っていません</strong>（別リポジトリです）。<br><strong>開いたらまず <code>app.setup</code> / <code>app.start</code> を読んでください</strong>（あなたの機械で走るコマンドです）</dd>
       <dt>再現</dt><dd><code>uv run gmp build ../GlossPop/docs/video/gloss-scope/plan.json --voice</code>（GhostMoviePlay 側で実行）</dd>
     </dl>
   </article>

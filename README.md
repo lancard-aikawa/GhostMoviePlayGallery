@@ -12,16 +12,25 @@ GitHub Pages で公開している → **https://lancard-aikawa.github.io/GhostM
 | `index.html` | **生成物。手で直さない**（次の build で消える） |
 | `v/<slug>.html` | **生成物。**「この動画を見て」と渡す 1 本ぶんの URL |
 | `videos/<slug>.jpg` | **生成物。** サムネ（OGP のプレビュー画像と `<video poster>`） |
+| `bundles/<slug>.zip` | **生成物。** その動画を撮った設定一式（構成・台本・仕込み） |
 | `style.css` | データではないので**手で直す** |
 | `videos/<slug>.mp4` | 展示する動画そのもの |
 
-**尺とサムネは書かない。** mp4 から測って抜くので、動画を差し替えたら勝手に直る。
+**尺とサムネと設定の zip は書かない。** mp4 から測って抜き、素材は `git archive` で
+束ねるので、**差し替えたら勝手に直る**。
+
+**設定の zip は「落とせば同じことが手元で出来る」を形にしたもの。** 動画がその場で
+何をするか見せていて、隣に一式が置いてある。**他の人が出すなら、自分のリポジトリに
+置いて索引に 1 行足せばいい** —— ここに集める必要は無い。
 
 ここが持つのは **mp4 と説明だけ**。構成 (`video.md`) と台本 (`plan.json`) と収録対象は
 それぞれのプロジェクトに置いたままで、ページからリンクする。録画と書き出しは決定論的なので、
 素材を clone して同じコマンドを打てば同じ動画が出る —— それが確かめられる形を崩さないこと。
 
 ## 1本足す
+
+束ねる元は**隣に clone してある**のが前提（`../GhostMoviePlay` / `../GlossPop`）。
+無ければ build がそこで止まる —— **黙って古い zip を配らない**。
 
 ```bash
 # 1. 対象プロジェクトで撮る
@@ -33,10 +42,11 @@ cp "<出力先>/output.mp4" videos/<slug>.mp4
 
 # 3. videos.py に 1 ブロック足す
 #    slug・タイトル・説明・サムネにする秒・収録対象・素材の URL・再現コマンド
+#    + bundle (束ねる元) と bundle_note (どこに置けば動くか)
 
 python build.py                            # index.html / v/*.html / サムネが出来る
 
-git add videos.py videos/ index.html v/ && git commit && git push
+git add videos.py videos/ bundles/ index.html v/ && git commit && git push
 ```
 
 **サムネにする秒 (`poster_at`) は中身で選ぶ。** リンクを貼ったときのプレビューに
@@ -46,6 +56,14 @@ git add videos.py videos/ index.html v/ && git commit && git push
 
 **素材が公開されていない動画は載せない。** 再現できない動画が 1 本混ざると、
 「clone すれば同じものが出る」というページ全体の主張が嘘になる。
+
+**`build.py` は束の中を見て、ユーザー名が入っていたら止まる。** 出す口は漏らす口
+でもあり、Krita の 1 本を出す間に**動画・サムネ・ドキュメントの画像で 3 回**踏んだ
+（どれも出す直前まで気づいていない）。止めるのは道具の仕事にしてある。
+
+**zip には走るコマンドが入っている。** `plan.json` の `app.setup` / `app.start` /
+`app.teardown` は落とした人の機械で走る。カードにも束の中の `BUNDLE.md` にも
+「開いたらまずそこを読む」と書いてあるが、**配る側も中身を見てから出すこと**。
 
 ## 踏みやすいところ
 

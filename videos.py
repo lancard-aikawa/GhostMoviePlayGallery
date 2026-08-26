@@ -6,6 +6,14 @@
 値は HTML の断片。リンクや `<code>` をそのまま書いてよい (`lede` だけは
 リンクを貼らないこと —— OGP の説明文にタグを落として使うため)。
 
+`bundle_note` は **束をどこに置けば動くか**。`app.cwd` がフォルダ自身を指している
+1 本はどこでも動くが、プロジェクトのルートを指している 1 本は元の場所に戻さないと
+開けない。**そこを書かないと、落とした人が「動かない」で終わる。**
+
+`bundle` は **その動画を撮った設定一式の在り処**。`build.py` が `git archive` で
+zip にして `bundles/<slug>.zip` に置く。**隣に clone してあることが前提**なので、
+無ければ build がそこで止まる (黙って古い zip を配らない)。
+
 ## 1 本足す
 
 1. `videos/<slug>.mp4` を置く
@@ -31,6 +39,11 @@ VIDEOS = [
         "lede": "ツール自身の説明ページを操作しながら、3 段構成（plan → record → render）が"
                 "何を分けているのかを見せる 1 本。",
         "poster_at": 30.0,
+        "bundle": {"repo": "../GhostMoviePlay", "path": "docs/video/intro"},
+        "bundle_note": "このフォルダは <strong>GhostMoviePlay の <code>docs/video/intro/</code> に戻して</strong>"
+                       "使います —— <code>app.start</code> がこのパスの <code>site/</code>"
+                       "（収録対象の説明ページ。<strong>同梱してあります</strong>）を簡易サーバで"
+                       "配信するので、置き場所が変わると開けません。",
         "target": "同梱の説明ページ（<code>docs/video/intro/site/index.html</code>）",
         "source": f'<a href="{GMP}/tree/main/docs/video/intro">docs/video/intro/</a>'
                   "（構成・台本とも公開）",
@@ -44,6 +57,11 @@ VIDEOS = [
                 "日本語には語境界が無く部分文字列で照合しているからだと説明して、"
                 "用語名を直して 1 箇所に収めるまで。",
         "poster_at": 48.0,
+        "bundle": {"repo": "../GlossPop", "path": "docs/video/gloss-scope"},
+        "bundle_note": "このフォルダは <strong>GlossPop の <code>docs/video/gloss-scope/</code> に戻して</strong>"
+                       "使います —— <code>app.cwd</code> が GlossPop のルートを指していて、"
+                       "<code>serve.py</code> が向こうの <code>content/</code> を読みます。"
+                       "<strong>撮る対象そのものは入っていません</strong>（別リポジトリです）。",
         "target": '<a href="https://github.com/lancard-aikawa/GlossPop">GlossPop</a>'
                   "（収録用の使い捨てデータルートを <code>serve.py</code> が立てるので、実辞書は触らない）",
         "source": '<a href="https://github.com/lancard-aikawa/GlossPop/tree/main/docs/video/gloss-scope">'
@@ -59,6 +77,9 @@ VIDEOS = [
                 "zip はファイル名の一覧を暗号化しない仕様で、<strong>暗号の強さとは関係が無い</strong>と説明し、"
                 "7z 形式の「ファイル名を暗号化」で隠せるところまで。",
         "poster_at": 24.0,
+        "bundle": {"repo": "../GhostMoviePlay", "path": "docs/video/assist-7zip"},
+        "bundle_note": "<strong>どこに置いても動きます</strong> —— <code>app.cwd</code> はこのフォルダ自身で、"
+                       "仕込みが撮影用のダミーを作ります。撮るのは人なので <code>gmp shoot</code> から。",
         "target": "7-Zip File Manager（<code>winget install 7zip.7zip</code>。"
                   "撮影用のダミーは仕込みが作り、後片付けで消える）",
         "source": f'<a href="{GMP}/tree/main/docs/video/assist-7zip">docs/video/assist-7zip/</a>',
@@ -77,6 +98,9 @@ VIDEOS = [
                 "しまうが、原因は<strong>離れたところに残った選択範囲</strong>で、その外側は描けないように"
                 "保護されている。解除して同じブラシ・同じ場所に描けるところまで。",
         "poster_at": 48.0,
+        "bundle": {"repo": "../GhostMoviePlay", "path": "docs/video/assist-krita"},
+        "bundle_note": "<strong>どこに置いても動きます</strong> —— <code>app.cwd</code> はこのフォルダ自身で、"
+                       "仕込みが撮影用のダミーを作ります。撮るのは人なので <code>gmp shoot</code> から。",
         "target": "Krita（<code>winget install KDE.Krita</code>。"
                   "撮影用の白いキャンバスは仕込みが作り、後片付けで消える）",
         "source": f'<a href="{GMP}/tree/main/docs/video/assist-krita">docs/video/assist-krita/</a>',
