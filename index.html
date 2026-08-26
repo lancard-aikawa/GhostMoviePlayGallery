@@ -107,7 +107,7 @@
   <p class="lede muted">
     録画と書き出しは決定論的なので、素材を clone して同じコマンドを打てば同じものが出ます。
     各動画に、それを再現するコマンドと素材の場所を添えてあります。
-    <strong>1 本だけ例外があります</strong> —— 自動操作が届かないアプリは人が操作して撮るので、
+    <strong>2 本は例外です</strong> —— 自動操作が届かないアプリは人が操作して撮るので、
     clone しても撮り直しが要ります（そのカードに書いてあります）。
   </p>
   <p class="toplinks">
@@ -151,6 +151,18 @@
       <dt>収録対象</dt><dd>7-Zip File Manager（<code>winget install 7zip.7zip</code>。撮影用のダミーは仕込みが作り、後片付けで消える）</dd>
       <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GhostMoviePlay/tree/main/docs/video/assist-7zip">docs/video/assist-7zip/</a></dd>
       <dt>再現</dt><dd><strong>この 1 本だけ、コマンド 1 つでは出ません。</strong> 7-Zip は UI Automation にウィンドウの枠しか出さず自動操作が原理的に届かないので、<a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_WINAPP.md">支援収録</a>で人が操作して撮っています。<code>uv run gmp shoot docs/video/assist-7zip/plan.json</code> で画面を開き、ビートごとの指示どおりに操作して撮ったあと <code>gmp record</code> → <code>gmp render</code>。台本と操作手順は素材に入っています。</dd>
+    </dl>
+  </article>
+
+  <article class="card">
+    <h2>Krita —— 描けなくなったら、選択範囲を疑う</h2>
+    <p>図形の片方を矩形選択して塗ったあと、解除を忘れたまま別の場所へ筆を走らせると、なぞっても線が一本も残らない。エラーも音も出ないのでブラシやレイヤーを疑ってしまうが、原因は<strong>離れたところに残った選択範囲</strong>で、その外側は描けないように保護されている。解除して同じブラシ・同じ場所に描けるところまで。</p>
+    <video controls playsinline preload="metadata" src="videos/assist-krita.mp4"></video>
+    <dl class="meta">
+      <dt>尺</dt><dd>約 89 秒</dd>
+      <dt>収録対象</dt><dd>Krita（<code>winget install KDE.Krita</code>。撮影用の白いキャンバスは仕込みが作り、後片付けで消える）</dd>
+      <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GhostMoviePlay/tree/main/docs/video/assist-krita">docs/video/assist-krita/</a></dd>
+      <dt>再現</dt><dd><strong>この 1 本もコマンド 1 つでは出ません。</strong> キャンバスは Krita が自分で描いていて UI Automation からは原理的に見えないので、<a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_WINAPP.md">支援収録</a>で人が操作して撮っています。筆を走らせるところは静止画では伝わらないため、10 ビートのうち 5 つは<strong>録画</strong>で撮りました。<code>uv run gmp shoot docs/video/assist-krita/plan.json</code> で画面を開き、ビートごとの指示どおりに操作して撮ったあと <code>gmp record</code> → <code>gmp render</code>。</dd>
     </dl>
   </article>
 
