@@ -28,7 +28,7 @@
   <p class="lede muted">
     録画と書き出しは決定論的なので、素材を clone して同じコマンドを打てば同じものが出ます。
     各動画に、それを再現するコマンドと素材の場所を添えてあります。
-    <strong>2 本は例外です</strong> —— 自動操作が届かないアプリは人が操作して撮るので、
+    <strong>1 本は例外です</strong> —— 自動操作が届かないアプリは人が操作して撮るので、
     clone しても撮り直しが要ります（そのカードに書いてあります）。
   </p>
   <p class="toplinks">
@@ -47,7 +47,7 @@
       <dt>尺</dt><dd>約 99 秒</dd>
       <dt>収録対象</dt><dd>同梱の説明ページ（<code>docs/video/intro/site/index.html</code>）</dd>
       <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GhostMoviePlay/tree/main/docs/video/intro">docs/video/intro/</a>（構成・台本とも公開）</dd>
-      <dt>設定</dt><dd><a href="bundles/gmp.zip" download>gmp.zip</a>（8 KB / 3 ファイル / 出所 <code>02fe6b1</code>）<br>構成・台本・仕込みの一式。生成物は入っていません。このフォルダは <strong>GhostMoviePlay の <code>docs/video/intro/</code> に戻して</strong>使います —— <code>app.start</code> がこのパスの <code>site/</code>（収録対象の説明ページ。<strong>同梱してあります</strong>）を簡易サーバで配信するので、置き場所が変わると開けません。<br><strong>開いたらまず <code>app.setup</code> / <code>app.start</code> を読んでください</strong>（あなたの機械で走るコマンドです）。手引き → <a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_BUNDLE.md">README_BUNDLE.md</a></dd>
+      <dt>設定</dt><dd><a href="bundles/gmp.zip" download>gmp.zip</a>（8 KB / 3 ファイル / 出所 <code>365fc6b</code>）<br>構成・台本・仕込みの一式。生成物は入っていません。このフォルダは <strong>GhostMoviePlay の <code>docs/video/intro/</code> に戻して</strong>使います —— <code>app.start</code> がこのパスの <code>site/</code>（収録対象の説明ページ。<strong>同梱してあります</strong>）を簡易サーバで配信するので、置き場所が変わると開けません。<br><strong>開いたらまず <code>app.setup</code> / <code>app.start</code> を読んでください</strong>（あなたの機械で走るコマンドです）。手引き → <a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_BUNDLE.md">README_BUNDLE.md</a></dd>
       <dt>再現</dt><dd><code>uv run gmp build docs/video/intro/plan.json --voice</code></dd>
     </dl>
     <p class="more"><a href="v/gmp.html">この動画だけのページ →</a></p>
@@ -75,8 +75,8 @@
       <dt>尺</dt><dd>約 69 秒</dd>
       <dt>収録対象</dt><dd>7-Zip File Manager（<code>winget install 7zip.7zip</code>。撮影用のダミーは仕込みが作り、後片付けで消える）</dd>
       <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GhostMoviePlay/tree/main/docs/video/assist-7zip">docs/video/assist-7zip/</a></dd>
-      <dt>設定</dt><dd><a href="bundles/assist-7zip.zip" download>assist-7zip.zip</a>（9 KB / 3 ファイル / 出所 <code>02fe6b1</code>）<br>構成・台本・仕込みの一式。生成物は入っていません。<strong>どこに置いても動きます</strong> —— <code>app.cwd</code> はこのフォルダ自身で、仕込みが撮影用のダミーを作ります。撮るのは人なので <code>gmp shoot</code> から。<br><strong>開いたらまず <code>app.setup</code> / <code>app.start</code> を読んでください</strong>（あなたの機械で走るコマンドです）。手引き → <a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_BUNDLE.md">README_BUNDLE.md</a></dd>
-      <dt>再現</dt><dd><strong>この 1 本だけ、コマンド 1 つでは出ません。</strong> 7-Zip は UI Automation にウィンドウの枠しか出さず自動操作が原理的に届かないので、<a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_WINAPP.md">支援収録</a>で人が操作して撮っています。<code>uv run gmp shoot docs/video/assist-7zip/plan.json</code> で画面を開き、ビートごとの指示どおりに操作して撮ったあと <code>gmp record</code> → <code>gmp render</code>。台本と操作手順は素材に入っています。</dd>
+      <dt>設定</dt><dd><a href="bundles/assist-7zip.zip" download>assist-7zip.zip</a>（10 KB / 3 ファイル / 出所 <code>365fc6b</code>）<br>構成・台本・仕込みの一式。生成物は入っていません。<strong>どこに置いても動きます</strong> —— <code>app.cwd</code> はこのフォルダ自身で、仕込みが撮影用のダミーを作ります（<code>C:\gmp\sample</code>。後片付けで消えます）。<br><strong>開いたらまず <code>app.setup</code> / <code>app.start</code> を読んでください</strong>（あなたの機械で走るコマンドです）。手引き → <a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_BUNDLE.md">README_BUNDLE.md</a></dd>
+      <dt>再現</dt><dd><code>uv run gmp build docs/video/assist-7zip/plan.json --voice</code>（Windows のみ。7-Zip が要ります）<br><strong>機械が 7-Zip を操作して撮ります。</strong> UI Automation にはウィンドウの枠しか出さないアプリですが、Win32 のウィンドウツリーからは一覧もダイアログも掴めるので、一覧の行を<code>row=給与明細_2026-07.pdf</code> のように<strong>名前で指して</strong>操作しています —— 同じ台本から 2 回撮って9 枚のショットが byte 一致します。<strong>撮っている間はマウスとキーボードに触らないでください</strong>（本物の入力を送るので、前に出たウィンドウに入ります）。</dd>
     </dl>
     <p class="more"><a href="v/assist-7zip.html">この動画だけのページ →</a></p>
   </article>
@@ -89,7 +89,7 @@
       <dt>尺</dt><dd>約 89 秒</dd>
       <dt>収録対象</dt><dd>Krita（<code>winget install KDE.Krita</code>。撮影用の白いキャンバスは仕込みが作り、後片付けで消える）</dd>
       <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GhostMoviePlay/tree/main/docs/video/assist-krita">docs/video/assist-krita/</a></dd>
-      <dt>設定</dt><dd><a href="bundles/assist-krita.zip" download>assist-krita.zip</a>（11 KB / 3 ファイル / 出所 <code>02fe6b1</code>）<br>構成・台本・仕込みの一式。生成物は入っていません。<strong>どこに置いても動きます</strong> —— <code>app.cwd</code> はこのフォルダ自身で、仕込みが撮影用のダミーを作ります。撮るのは人なので <code>gmp shoot</code> から。<br><strong>開いたらまず <code>app.setup</code> / <code>app.start</code> を読んでください</strong>（あなたの機械で走るコマンドです）。手引き → <a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_BUNDLE.md">README_BUNDLE.md</a></dd>
+      <dt>設定</dt><dd><a href="bundles/assist-krita.zip" download>assist-krita.zip</a>（11 KB / 3 ファイル / 出所 <code>365fc6b</code>）<br>構成・台本・仕込みの一式。生成物は入っていません。<strong>どこに置いても動きます</strong> —— <code>app.cwd</code> はこのフォルダ自身で、仕込みが撮影用のダミーを作ります。撮るのは人なので <code>gmp shoot</code> から。<br><strong>開いたらまず <code>app.setup</code> / <code>app.start</code> を読んでください</strong>（あなたの機械で走るコマンドです）。手引き → <a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_BUNDLE.md">README_BUNDLE.md</a></dd>
       <dt>再現</dt><dd><strong>この 1 本もコマンド 1 つでは出ません。</strong> キャンバスは Krita が自分で描いていて UI Automation からは原理的に見えないので、<a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_WINAPP.md">支援収録</a>で人が操作して撮っています。筆を走らせるところは静止画では伝わらないため、10 ビートのうち 5 つは<strong>録画</strong>で撮りました。<code>uv run gmp shoot docs/video/assist-krita/plan.json</code> で画面を開き、ビートごとの指示どおりに操作して撮ったあと <code>gmp record</code> → <code>gmp render</code>。</dd>
     </dl>
     <p class="more"><a href="v/assist-krita.html">この動画だけのページ →</a></p>

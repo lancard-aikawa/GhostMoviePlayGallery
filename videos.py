@@ -76,19 +76,23 @@ VIDEOS = [
                 "ところが出来た書庫を開くとパスワードを訊かれず、中のファイル名が全部読める。"
                 "zip はファイル名の一覧を暗号化しない仕様で、<strong>暗号の強さとは関係が無い</strong>と説明し、"
                 "7z 形式の「ファイル名を暗号化」で隠せるところまで。",
-        "poster_at": 24.0,
+        "poster_at": 27.0,
         "bundle": {"repo": "../GhostMoviePlay", "path": "docs/video/assist-7zip"},
         "bundle_note": "<strong>どこに置いても動きます</strong> —— <code>app.cwd</code> はこのフォルダ自身で、"
-                       "仕込みが撮影用のダミーを作ります。撮るのは人なので <code>gmp shoot</code> から。",
+                       "仕込みが撮影用のダミーを作ります（<code>C:\\gmp\\sample</code>。後片付けで消えます）。",
         "target": "7-Zip File Manager（<code>winget install 7zip.7zip</code>。"
                   "撮影用のダミーは仕込みが作り、後片付けで消える）",
         "source": f'<a href="{GMP}/tree/main/docs/video/assist-7zip">docs/video/assist-7zip/</a>',
-        "repro": "<strong>この 1 本だけ、コマンド 1 つでは出ません。</strong> "
-                 "7-Zip は UI Automation にウィンドウの枠しか出さず自動操作が原理的に届かないので、"
-                 f'<a href="{GMP}/blob/main/README_WINAPP.md">支援収録</a>で人が操作して撮っています。'
-                 "<code>uv run gmp shoot docs/video/assist-7zip/plan.json</code> で画面を開き、"
-                 "ビートごとの指示どおりに操作して撮ったあと <code>gmp record</code> → "
-                 "<code>gmp render</code>。台本と操作手順は素材に入っています。",
+        "repro": "<code>uv run gmp build docs/video/assist-7zip/plan.json --voice</code>"
+                 "（Windows のみ。7-Zip が要ります）<br>"
+                 "<strong>機械が 7-Zip を操作して撮ります。</strong> UI Automation には"
+                 "ウィンドウの枠しか出さないアプリですが、Win32 のウィンドウツリーからは"
+                 "一覧もダイアログも掴めるので、一覧の行を"
+                 "<code>row=給与明細_2026-07.pdf</code> のように"
+                 "<strong>名前で指して</strong>操作しています —— 同じ台本から 2 回撮って"
+                 "9 枚のショットが byte 一致します。"
+                 "<strong>撮っている間はマウスとキーボードに触らないでください</strong>"
+                 "（本物の入力を送るので、前に出たウィンドウに入ります）。",
     },
     {
         "slug": "assist-krita",

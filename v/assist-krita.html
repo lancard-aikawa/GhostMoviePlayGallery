@@ -36,7 +36,7 @@
       <dt>尺</dt><dd>約 89 秒</dd>
       <dt>収録対象</dt><dd>Krita（<code>winget install KDE.Krita</code>。撮影用の白いキャンバスは仕込みが作り、後片付けで消える）</dd>
       <dt>素材</dt><dd><a href="https://github.com/lancard-aikawa/GhostMoviePlay/tree/main/docs/video/assist-krita">docs/video/assist-krita/</a></dd>
-      <dt>設定</dt><dd><a href="../bundles/assist-krita.zip" download>assist-krita.zip</a>（11 KB / 3 ファイル / 出所 <code>02fe6b1</code>）<br>構成・台本・仕込みの一式。生成物は入っていません。<strong>どこに置いても動きます</strong> —— <code>app.cwd</code> はこのフォルダ自身で、仕込みが撮影用のダミーを作ります。撮るのは人なので <code>gmp shoot</code> から。<br><strong>開いたらまず <code>app.setup</code> / <code>app.start</code> を読んでください</strong>（あなたの機械で走るコマンドです）。手引き → <a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_BUNDLE.md">README_BUNDLE.md</a></dd>
+      <dt>設定</dt><dd><a href="../bundles/assist-krita.zip" download>assist-krita.zip</a>（11 KB / 3 ファイル / 出所 <code>365fc6b</code>）<br>構成・台本・仕込みの一式。生成物は入っていません。<strong>どこに置いても動きます</strong> —— <code>app.cwd</code> はこのフォルダ自身で、仕込みが撮影用のダミーを作ります。撮るのは人なので <code>gmp shoot</code> から。<br><strong>開いたらまず <code>app.setup</code> / <code>app.start</code> を読んでください</strong>（あなたの機械で走るコマンドです）。手引き → <a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_BUNDLE.md">README_BUNDLE.md</a></dd>
       <dt>再現</dt><dd><strong>この 1 本もコマンド 1 つでは出ません。</strong> キャンバスは Krita が自分で描いていて UI Automation からは原理的に見えないので、<a href="https://github.com/lancard-aikawa/GhostMoviePlay/blob/main/README_WINAPP.md">支援収録</a>で人が操作して撮っています。筆を走らせるところは静止画では伝わらないため、10 ビートのうち 5 つは<strong>録画</strong>で撮りました。<code>uv run gmp shoot docs/video/assist-krita/plan.json</code> で画面を開き、ビートごとの指示どおりに操作して撮ったあと <code>gmp record</code> → <code>gmp render</code>。</dd>
     </dl>
   </article>
